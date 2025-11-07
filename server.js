@@ -21,6 +21,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+const port = process.env.PORT || 4000
 
 const db = knex({
   client: 'pg',
@@ -34,8 +35,8 @@ const db = knex({
 });
 
 
-app.listen(3000, () => {
-    console.log('app is running on port 3000');
+app.listen(port, () => {
+    console.log(`app is running on port ${port}`);
 })
 
 app.use (express.json());   // use it to parse the json request that the server receive

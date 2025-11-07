@@ -1,5 +1,3 @@
-// const Clarifai = require ('clarifai');
-
 const MODEL_ID = 'face-detection';
 
 // Clarifai function (initially in the front-end)
