@@ -1,4 +1,4 @@
-const Clarifai = require ('clarifai');
+// const Clarifai = require ('clarifai');
 
 const MODEL_ID = 'face-detection';
 

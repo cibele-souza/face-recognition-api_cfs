@@ -41,6 +41,7 @@ app.listen(3000, () => {
 app.use (express.json());   // use it to parse the json request that the server receive
 app.use(cors());
 
+
 // ROOT
 app.get ('/', (req, res) => {
     res.send('success');
@@ -54,7 +55,7 @@ app.post ('/signin', signin.handleSignin(db, bcrypt));
 
 // REGISTER : a new user will be created and add to the database
 app.post ('/register', (req, res) => { register.handleRegister (req, res, db, bcrypt) });
-                                    // dependency injection: we pass what the handleRegister function need to run this way
+                                    // dependency injection: we pass what the handleRegister function needs to run this way
 
 
 // PROFILE

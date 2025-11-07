@@ -1,5 +1,6 @@
 const handleProfileGet = (req, res, db) => {
-    // putting   :id   allows us to enter in our browser anything and we'll be able to grab this id trough the request.params property
+    // putting ':id' allows us to enter in our browser anything and we'll be able to grab this id 
+    // through the request.params property
     const { id } = req.params;
     db.select('*').from('users').where({id})
     .then (user => {
@@ -13,5 +14,5 @@ const handleProfileGet = (req, res, db) => {
 }
 
 module.exports = {
-    handleProfileGet: handleProfileGet
+    handleProfileGet
 };
