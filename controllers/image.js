@@ -3,7 +3,7 @@ const MODEL_ID = 'face-detection';
 // Clarifai function (initially in the front-end)
 const returnClarifaiRequestOptions = (imageUrl) => {
     // Your PAT (Personal Access Token) can be found in the Account's Security section
-    const PAT = '3c886cb6ca344b89a3d10bca79135c5c';
+    const PAT = process.env.CLARIFAI_PAT;
     // Specify the correct user_id/app_id pairings
     // Since you're making inferences outside your app's scope
     const USER_ID = 'clarifai';
@@ -41,7 +41,7 @@ const returnClarifaiRequestOptions = (imageUrl) => {
 
 
 const handleApiCall = (req, res) => {
-    console.log(req.body.input);
+    // console.log(req.body.input);
     fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/outputs", returnClarifaiRequestOptions(req.body.input))
         .then (response => response.json())
         .then (data => {

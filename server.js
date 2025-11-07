@@ -26,11 +26,11 @@ const port = process.env.PORT || 4000
 const db = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',  // it corresponds to localhost
+    host: process.env.DATABASE_HOST,              // '127.0.0.1' corresponds to localhost
     port: 5432,
-    user: 'postgres',
-    password: 'castelo172',
-    database: 'facerecog',
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_DB,
   },
 });
 
